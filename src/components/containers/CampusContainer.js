@@ -8,7 +8,7 @@ If needed, it also defines the component's "connect" function.
 import Header from './Header';
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { fetchCampusThunk } from "../../store/thunks";
+import { editCampusThunk, fetchCampusThunk } from "../../store/thunks";
 
 import { CampusView } from "../views";
 
@@ -43,6 +43,7 @@ const mapState = (state) => {
 const mapDispatch = (dispatch) => {
   return {
     fetchCampus: (id) => dispatch(fetchCampusThunk(id)),
+    editCampus: (id) => dispatch(editCampusThunk(id)),
   };
 };
 
