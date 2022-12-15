@@ -6,11 +6,13 @@ import { Switch, Route } from "react-router-dom";
 import {
   HomePageContainer,
   CampusContainer,
+  NewCampusContainer,
   StudentContainer,
   AllCampusesContainer,
   AllStudentsContainer,
   NewStudentContainer,
-  EditCampusContainer
+  EditStudentContainer,
+  EditCampusContainer,
 } from './components/containers';
 
 // if you create separate components for adding/editing 
@@ -23,11 +25,14 @@ const App = () => {
       <Switch>
         <Route exact path="/" component={HomePageContainer} />
         <Route exact path="/campuses" component={AllCampusesContainer} />
+        <Route exact path="/newcampus" component={NewCampusContainer} />
         <Route exact path="/campus/:id" component={CampusContainer} />
         <Route exact path="/students" component={AllStudentsContainer} />
         <Route exact path="/newstudent" component={NewStudentContainer} />
         <Route exact path="/student/:id" component={StudentContainer} />
+        <Route exact path="/editstudent/*" component={EditStudentContainer} />
         <Route exact path="/editcampus/*" component={EditCampusContainer} />
+
       </Switch>        
     </div>
   );
