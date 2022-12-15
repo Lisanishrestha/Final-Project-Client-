@@ -22,7 +22,10 @@ class NewStudentContainer extends Component {
       lastname: "", 
       campusId: null, 
       redirect: false, 
-      redirectId: null
+      redirectId: null,
+      email: "",
+      imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRePoVhTeaks5ESIWqL34k8BOO9Wh6UZdZECw&usqp=CAU",
+      gpa: 0,
     };
   }
 
@@ -40,6 +43,9 @@ class NewStudentContainer extends Component {
     let student = {
         firstname: this.state.firstname,
         lastname: this.state.lastname,
+        campusId: this.state.campusId,
+        imageUrl: this.state.imageUrl,
+        gpa: this.state.gpa,
         campusId: this.state.campusId
     };
     
@@ -52,7 +58,10 @@ class NewStudentContainer extends Component {
       lastname: "", 
       campusId: null, 
       redirect: true, 
-      redirectId: newStudent.id
+      redirectId: newStudent.id,
+      imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRePoVhTeaks5ESIWqL34k8BOO9Wh6UZdZECw&usqp=CAU",
+      gpa: 0,
+      campusId: null, 
     });
   }
 
