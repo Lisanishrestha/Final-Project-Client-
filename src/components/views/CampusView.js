@@ -44,38 +44,39 @@ const useStyles = makeStyles( () => ({
 }));
 // Take in props data to construct the component
 const CampusView = (props) => {
-  const {campus,deleteCampus, deleteStudent} = props;
-  const classes = useStyles(); 
-  if (!campus.students.length){
-  // Render a single Campus view with list of its students
-  return (
-    <div className={classes.root}>
-    <AppBar position="static" elevation={0} className={classes.appBar}>
-      <Toolbar>
-        <Typography variant="h6" className={classes.title} color="inherit" >
-          StudentFinder
-        </Typography>
+  const {campus, deleteCampus, deleteStudent} = props;
+  const classes = useStyles();
 
-        <Link className={classes.links} to={'/campuses'} >
-          <Button variant="contained" color="primary" style={{marginRight: '10px'}}>
-            All Campuses
-          </Button>
-        </Link>
+  if (!campus.students.length) {
+    return (
+      <div className={classes.root}>
+      <AppBar position="static" elevation={0} className={classes.appBar}>
+        <Toolbar>
+          <Typography variant="h6" className={classes.title} color="inherit" >
+            StudentFinder
+          </Typography>
 
-        <Link className={classes.links} to={'/students'} >
-          <Button variant="contained" color="primary" style={{marginRight: '10px'}}>
-            All Students
-          </Button>
-        </Link>
+          <Link className={classes.links} to={'/campuses'} >
+            <Button variant="contained" color="primary" style={{marginRight: '10px'}}>
+              All Campuses
+            </Button>
+          </Link>
 
-        <Link className={classes.links} to={'/'} >
-          <Button variant="contained" color="primary">
-            Home
-          </Button>
-        </Link>
-      </Toolbar>
-    </AppBar>
-    <div className={classes.greeting}><h1>{campus.name}</h1></div>
+          <Link className={classes.links} to={'/students'} >
+            <Button variant="contained" color="primary" style={{marginRight: '10px'}}>
+              All Students
+            </Button>
+          </Link>
+
+          <Link className={classes.links} to={'/'} >
+            <Button variant="contained" color="primary">
+              Home
+            </Button>
+          </Link>
+        </Toolbar>
+      </AppBar>
+      
+      <div className={classes.greeting}><h1>{campus.name}</h1></div>
       <img src={campus.imageUrl} alt="Campus" className={classes.image}/>
       <h3>{campus.description}</h3>
       <p>{campus.address}</p>
@@ -125,22 +126,27 @@ const CampusView = (props) => {
       </AppBar>
 
       <h1>{campus.name}</h1>
-      <p>{campus.address}</p>
+      <img src={campus.imageUrl} alt="Campus" className={classes.image}/>
       <p>{campus.description}</p>
+      <p>{campus.address}</p>
+      <ul>
       {campus.students.map( student => {
         let name = student.firstname + " " + student.lastname;
         return (
-          <div key={student.id}>
-            <Link to={`/student/${student.id}`}>
-              <h2>{name}</h2>
-            </Link>     
-            <br/>
+          <div>
+          <li key={student.id}>
+          <Link to={`/student/${student.id}`}>
+          {name}
+          </Link>
+          <br/>
           <Link to={`/students`}>
           <button onClick={() => deleteStudent(student.id)}>Delete Student</button>
           </Link>
+          </li>
           </div>
         );
       })}
+      </ul>
       <Link to={`/editcampus/` + campus.id}>
         <button>Edit Campus</button>
       </Link>
@@ -155,5 +161,6 @@ const CampusView = (props) => {
       <br/>
    </div>
   );
-  };
-export default CampusView;
+
+};
+export default CampusView; 
