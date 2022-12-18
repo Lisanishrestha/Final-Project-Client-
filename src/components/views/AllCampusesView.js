@@ -107,7 +107,7 @@ const AllCampusesView = (props) => {
             <h2>{campus.name}</h2>
           </Link>
           <img src={campus.imageUrl} alt="Campus" className={classes.image}/>
-          <button onClick={() => deleteCampus(campus.id)}>X</button>
+          <button onClick={() => {deleteCampus(campus.id); window.location.reload();}}>X</button>
           <div>
           <h4>campus id: {campus.id}</h4>
           <p>{campus.address}</p>
@@ -117,7 +117,7 @@ const AllCampusesView = (props) => {
         </div>
       ))}
       <br/>
-      <Link to={`/New Campus`}>
+      <Link to={`/newcampus`}>
         <button>Add New Campus</button> 
       </Link>
     </div>

@@ -19,12 +19,12 @@ class NewStudentContainer extends Component {
     this.state = {
       firstname: "", 
       lastname: "", 
-      campusId: null, 
-      redirect: false, 
-      redirectId: null,
       email: "",
       imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRePoVhTeaks5ESIWqL34k8BOO9Wh6UZdZECw&usqp=CAU",
       gpa: 0,
+      campusId: null, 
+      redirect: false, 
+      redirectId: null
     };
   }
 
@@ -40,13 +40,13 @@ class NewStudentContainer extends Component {
     event.preventDefault();  // Prevent browser reload/refresh after submit.
 
     let student = {
-        firstname: this.state.firstname,
-        lastname: this.state.lastname,
-        campusId: this.state.campusId,
-        imageUrl: this.state.imageUrl,
-        gpa: this.state.gpa,
-        campusId: this.state.campusId
-    };
+      firstname: this.state.firstname,
+      lastname: this.state.lastname,
+      email: this.state.email,
+      imageUrl: this.state.imageUrl,
+      gpa: this.state.gpa,
+      campusId: this.state.campusId
+  };
     
     // Add new student in back-end database
     let newStudent = await this.props.addStudent(student);
@@ -55,12 +55,12 @@ class NewStudentContainer extends Component {
     this.setState({
       firstname: "", 
       lastname: "", 
-      campusId: null, 
-      redirect: true, 
-      redirectId: newStudent.id,
+      email: "",
       imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRePoVhTeaks5ESIWqL34k8BOO9Wh6UZdZECw&usqp=CAU",
       gpa: 0,
       campusId: null, 
+      redirect: true, 
+      redirectId: newStudent.id
     });
   }
 
