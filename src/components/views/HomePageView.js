@@ -13,7 +13,7 @@ import { Link } from 'react-router-dom';
 
 
 const useStyles = makeStyles(theme => ({
-  rroot: {
+  root: {
     flexGrow: 1,
   },
   title: {
