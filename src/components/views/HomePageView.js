@@ -66,6 +66,8 @@ const HomePageView = () => {
         </AppBar>
         
         <div className={classes.greeting}><h1>Home Page</h1></div>
+        <img src="https://www.cuny.edu/wp-content/uploads/sites/4/page-assets/global/Brooklyn_College_Students_891x891.png" alt="college" className={classes.image}/>
+
       </div>
     );    
   }
