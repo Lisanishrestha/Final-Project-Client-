@@ -53,7 +53,7 @@ const AllStudentsView = (props) => {
     <AppBar position="static" elevation={0} className={classes.appBar}>
       <Toolbar>
         <Typography variant="h6" className={classes.title} color="inherit" >
-          Student Finder
+          StudentFinder
         </Typography>
 
         <Link className={classes.links} to={'/campuses'} >
@@ -85,7 +85,7 @@ const AllStudentsView = (props) => {
       <AppBar position="static" elevation={0} className={classes.appBar}>
         <Toolbar>
           <Typography variant="h6" className={classes.title} color="inherit" >
-            Student Finder
+            StudentFinder
           </Typography>
 
           <Link className={classes.links} to={'/campuses'} >
