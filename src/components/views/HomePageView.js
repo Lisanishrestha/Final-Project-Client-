@@ -38,6 +38,13 @@ const useStyles = makeStyles(theme => ({
   links:{
     textDecoration: 'none',
   }
+  image: {
+    display: 'flex',
+    justifyContent: 'center',
+    backgroundColor: 'white',
+    width: "50%",
+    margin: "auto",
+  }
 }));
 
 const HomePageView = () => {
