@@ -37,7 +37,7 @@ const useStyles = makeStyles(theme => ({
   },
   links:{
     textDecoration: 'none',
-  }
+  },
   image: {
     display: 'flex',
     justifyContent: 'center',
@@ -48,35 +48,35 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const HomePageView = () => {
-  // Render Home page view
-    const classes = useStyles();
-    return (
-      <div className={classes.root}>
-        <AppBar position="static" elevation={0} className={classes.appBar}>
-          <Toolbar>
-            <Typography variant="h6" className={classes.title} color="inherit" >
-              Student Finder
-            </Typography>
-  
-            <Link className={classes.links} to={'/campuses'} >
-              <Button variant="contained" color="primary" style={{marginRight: '10px'}}>
-                All Campuses
-              </Button>
-            </Link>
-  
-            <Link className={classes.links} to={'/students'} >
-              <Button variant="contained" color="primary">
-                All Students
-              </Button>
-            </Link>
-          </Toolbar>
-        </AppBar>
-        
-        <div className={classes.greeting}><h1>Home Page</h1></div>
-        <img src="https://www.cuny.edu/wp-content/uploads/sites/4/page-assets/global/Brooklyn_College_Students_891x891.png" alt="college" className={classes.image}/>
+// Render Home page view
+  const classes = useStyles();
+  return (
+    <div className={classes.root}>
+      <AppBar position="static" elevation={0} className={classes.appBar}>
+        <Toolbar>
+          <Typography variant="h6" className={classes.title} color="inherit" >
+            Student Finder
+          </Typography>
 
-      </div>
-    );    
-  }
+          <Link className={classes.links} to={'/campuses'} >
+            <Button variant="contained" color="primary" style={{marginRight: '10px'}}>
+              All Campuses
+            </Button>
+          </Link>
+
+          <Link className={classes.links} to={'/students'} >
+            <Button variant="contained" color="primary">
+              All Students
+            </Button>
+          </Link>
+        </Toolbar>
+      </AppBar>
+
+      <div className={classes.greeting}><h1>Home Page</h1></div>
+      <img src="https://www.cuny.edu/wp-content/uploads/sites/4/page-assets/global/Brooklyn_College_Students_891x891.png" alt="college" className={classes.image}/>
+
+    </div>
+  );    
+}
 
 export default HomePageView;
